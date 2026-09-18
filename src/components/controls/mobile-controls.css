@@ -1,0 +1,86 @@
+.mobile-controls {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  touch-action: none;
+  z-index: 20;
+}
+
+.joystick-base {
+  position: absolute;
+  left: 6%;
+  bottom: 9%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 220, 255, 0.45);
+  background: radial-gradient(circle at 35% 30%, rgba(0, 60, 90, 0.45), rgba(0, 10, 25, 0.55));
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+}
+
+.joystick-ring {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 220, 255, 0.25);
+}
+
+.joystick-knob {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #7ff2ff, #00b3d6);
+  box-shadow: 0 0 22px rgba(0, 220, 255, 0.75);
+  transition: box-shadow 0.15s ease;
+}
+
+.action-buttons {
+  position: absolute;
+  right: 6%;
+  bottom: 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  pointer-events: auto;
+}
+
+.action-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #cdefff;
+  width: 76px;
+  height: 76px;
+  border: 2px solid rgba(0, 220, 255, 0.4);
+  background: rgba(0, 15, 30, 0.5);
+  clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
+  backdrop-filter: blur(6px);
+  user-select: none;
+  transition: background 0.12s ease, box-shadow 0.12s ease, transform 0.08s ease;
+}
+
+.boost-btn {
+  border-color: rgba(255, 170, 0, 0.55);
+  color: #ffe3b0;
+}
+
+.brake-btn.active,
+.boost-btn.active {
+  transform: scale(0.94);
+}
+
+.brake-btn.active {
+  background: rgba(0, 200, 255, 0.35);
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.6);
+}
+
+.boost-btn.active {
+  background: rgba(255, 150, 0, 0.35);
+  box-shadow: 0 0 28px rgba(255, 150, 0, 0.7);
+}
