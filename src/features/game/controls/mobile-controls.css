@@ -1,54 +1,107 @@
 .mobile-controls {
   position: fixed;
   inset: 0;
+  z-index: 50;
   pointer-events: none;
-  touch-action: none;
-  z-index: 20;
-}
-
-.action-buttons {
-  position: absolute;
-  right: 7%;
-  bottom: 10%;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 18px;
-  pointer-events: auto;
-}
-
-.action-btn {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  color: #cdefff;
-  width: 84px;
-  height: 84px;
-  border: 2px solid rgba(0, 220, 255, 0.4);
-  background: rgba(0, 15, 30, 0.5);
-  clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
-  backdrop-filter: blur(6px);
   user-select: none;
-  transition: background 0.12s ease, box-shadow 0.12s ease, transform 0.08s ease;
+  -webkit-user-select: none;
+  touch-action: none;
 }
 
 .boost-btn {
-  border-color: rgba(255, 170, 0, 0.55);
+  position: absolute;
+  right: clamp(18px, 5vw, 60px);
+  bottom: clamp(22px, 5vh, 48px);
+
+  width: clamp(120px, 18vw, 180px);
+  height: clamp(64px, 9vh, 92px);
+
+  pointer-events: auto;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
   color: #ffe3b0;
+
+  border: 1px solid rgba(255, 170, 0, 0.65);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 170, 0, 0.16),
+      rgba(30, 15, 0, 0.82)
+    );
+
+  box-shadow:
+    0 0 18px rgba(255, 170, 0, 0.12),
+    inset 0 0 18px rgba(255, 170, 0, 0.04);
+
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
 }
 
-.brake-btn.active,
+.boost-btn:active,
 .boost-btn.active {
   transform: scale(0.94);
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 150, 0, 0.45),
+      rgba(70, 30, 0, 0.9)
+    );
+
+  border-color: rgba(255, 190, 60, 0.95);
+
+  box-shadow:
+    0 0 28px rgba(255, 150, 0, 0.7),
+    inset 0 0 20px rgba(255, 170, 0, 0.12);
 }
 
-.brake-btn.active {
-  background: rgba(0, 200, 255, 0.35);
-  box-shadow: 0 0 24px rgba(0, 200, 255, 0.6);
+@media (max-width: 600px) {
+  .boost-btn {
+    right: 22px;
+    bottom: 24px;
+
+    width: 128px;
+    height: 68px;
+
+    font-size: 14px;
+  }
 }
 
-.boost-btn.active {
-  background: rgba(255, 150, 0, 0.35);
-  box-shadow: 0 0 28px rgba(255, 150, 0, 0.7);
+@media (max-width: 380px) {
+  .boost-btn {
+    right: 16px;
+    bottom: 18px;
+
+    width: 112px;
+    height: 60px;
+
+    font-size: 13px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .boost-btn {
+    right: 22px;
+    bottom: 18px;
+
+    width: 120px;
+    height: 58px;
+  }
 }

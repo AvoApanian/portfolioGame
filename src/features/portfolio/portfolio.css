@@ -1,7 +1,7 @@
 .portfolio {
   min-height: 100vh;
   width: 100%;
-  overflow-y: auto;
+  overflow: visible;
   background: radial-gradient(circle at 20% 0%, #0b1330 0%, #01020a 55%);
   color: #dff3ff;
   font-family: 'Rajdhani', sans-serif;
@@ -148,4 +148,96 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.portfolio {
+  min-height: 100vh;
+  height: auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .portfolio {
+    padding:
+      28px
+      16px
+      60px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 30px;
+  }
+
+  .portfolio-header h1 {
+    font-size: 30px;
+  }
+
+  .portfolio-role {
+    font-size: 15px;
+  }
+
+  .portfolio-header-actions {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-lang-switch {
+    flex-shrink: 0;
+  }
+
+  .portfolio-back {
+    flex: 1;
+  }
+
+  .portfolio-section {
+    padding: 22px 20px;
+    margin-bottom: 24px;
+
+    clip-path: none;
+    border-radius: 6px;
+  }
+
+  .portfolio-section h2 {
+    font-size: 17px;
+  }
+
+  .portfolio-section p,
+  .portfolio-list li {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .portfolio-footer {
+    padding-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .portfolio {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    padding: 28px 16px 60px;
+  }
 }
