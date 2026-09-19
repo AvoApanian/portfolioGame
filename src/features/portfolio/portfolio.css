@@ -1,12 +1,16 @@
 .portfolio {
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
   overflow: visible;
+
   background: radial-gradient(circle at 20% 0%, #0b1330 0%, #01020a 55%);
   color: #dff3ff;
   font-family: 'Rajdhani', sans-serif;
+
   padding: 48px 24px 80px;
-  box-sizing: border-box;
 }
 
 .portfolio-header {
@@ -150,36 +154,12 @@
   justify-content: center;
 }
 
-html,
-body,
-#root {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.portfolio {
-  min-height: 100vh;
-  height: auto;
-
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  -webkit-overflow-scrolling: touch;
-
-  box-sizing: border-box;
-}
-
 @media (max-width: 700px) {
   .portfolio {
-    padding:
-      28px
-      16px
-      60px;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    padding: 28px 16px 60px;
   }
 
   .portfolio-header {
@@ -196,7 +176,6 @@ body {
 
   .portfolio-header-actions {
     width: 100%;
-
     display: flex;
     flex-wrap: wrap;
   }
@@ -212,7 +191,6 @@ body {
   .portfolio-section {
     padding: 22px 20px;
     margin-bottom: 24px;
-
     clip-path: none;
     border-radius: 6px;
   }
@@ -229,15 +207,5 @@ body {
 
   .portfolio-footer {
     padding-bottom: 20px;
-  }
-}
-
-
-@media (max-width: 700px) {
-  .portfolio {
-    min-height: 100vh;
-    height: auto;
-    overflow: visible;
-    padding: 28px 16px 60px;
   }
 }

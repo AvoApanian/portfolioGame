@@ -43,6 +43,34 @@ export default function App() {
     getViewFromHash
   )
 
+  useEffect(() => {
+    document.body.classList.toggle(
+      'portfolio-page',
+      view === 'portfolio'
+    )
+
+    document.documentElement.classList.toggle(
+      'portfolio-page',
+      view === 'portfolio'
+    )
+
+    document
+      .getElementById('root')
+      ?.classList.toggle(
+        'portfolio-root',
+        view === 'portfolio'
+      )
+
+    return () => {
+      document.body.classList.remove('portfolio-page')
+      document.documentElement.classList.remove('portfolio-page')
+
+      document
+        .getElementById('root')
+        ?.classList.remove('portfolio-root')
+    }
+  }, [view])
+
   const [mobile, setMobile] = useState(
     getIsMobile
   )
