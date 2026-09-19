@@ -188,3 +188,47 @@ button {
 
 
 
+
+/* ============================================================
+   PORTFOLIO — FORCE ROOT SCROLL
+   ============================================================ */
+
+html:has(.portfolio),
+body:has(.portfolio) {
+  overflow: hidden !important;
+  touch-action: pan-y !important;
+}
+
+#root:has(.portfolio) {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100dvh !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  touch-action: pan-y !important;
+  overscroll-behavior: auto !important;
+}
+
+#root:has(.portfolio) .portfolio-view {
+  position: relative !important;
+
+  width: 100% !important;
+  min-height: 100% !important;
+  height: auto !important;
+
+  overflow: visible !important;
+}
+
+#root:has(.portfolio) .portfolio {
+  position: relative !important;
+
+  width: 100% !important;
+  min-height: 100vh !important;
+  height: auto !important;
+
+  overflow: visible !important;
+}
